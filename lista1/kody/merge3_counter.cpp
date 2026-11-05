@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -173,21 +175,31 @@ void mergesort3(int*& tab, int size){
 }
 
 int main(){
+    srand(time(NULL));
+    long long int comp = 0, assi = 0;
     int n;
-    cin >> n;
+    int k;
+    cin >> n >> k;
     int* tab = new int[n];
-    for (int i = 0; i < n; ++i){
-        cin >> tab[i];
+
+    for (int test = 0; test < k; ++test){
+        for (int i = 0; i < n; ++i){
+            //cin >> tab[i];
+            tab[i] = rand() % (INT_MAX / 100);
+        }
+
+        mergesort3(tab, n);
+
+        /*for (int i = 0; i < n; ++i){
+            cout << tab[i] << " ";
+        }*/
+
+        comp += comparison;
+        assi += assignment;
+        comparison = 0;
+        assignment = 0;
     }
-
-    mergesort3(tab, n);
-
-    for (int i = 0; i < n; ++i){
-        cout << tab[i] << " ";
-    }
-
-    cout << endl;
-    cout << comparison << " " << assignment;
+    cout << comp / k << " " << assi / k;
 
     delete [] tab;
 }
