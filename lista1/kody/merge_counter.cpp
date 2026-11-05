@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -85,20 +87,30 @@ void mergesort(int*& tab, int size){
 }
 
 int main(){
+    srand(time(NULL));
+    long long int comp = 0, assi = 0;
     int n;
-    cin >> n;
+    int k;
+    cin >> n >> k;
     int* tab = new int[n];
-    for (int i = 0; i < n; ++i){
-        cin >> tab[i];
-    }
 
-    mergesort(tab, n);
+    for (int test = 0; test < k; ++test){
+        for (int i = 0; i < n; ++i){
+            //cin >> tab[i];
+            tab[i] = rand() % INT_MAX;
+        }
 
-    for (int i = 0; i < n; ++i){
-        cout << tab[i] << " ";
+        mergesort(tab, n);
+
+        for (int i = 0; i < n; ++i){
+            cout << tab[i] << " ";
+        }
+        comp += comparison;
+        assi += assignment;
+        comparison = 0;
+        assignment = 0;
     }
-    cout << endl;
-    cout << comparison << " " << assignment;
+    cout << comp / k << " " << assi / k;
 
     delete [] tab;
 }
