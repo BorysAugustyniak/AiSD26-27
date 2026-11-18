@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int comparison = 0, assignment = 0;
+long long int comparison = 0, assignment = 0;
 
 //mergesort na 3 części
 void merge3(int*& tab, int*& help, int left, int middle1, int middle2, int right){

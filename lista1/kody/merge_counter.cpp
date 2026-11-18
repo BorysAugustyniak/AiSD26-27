@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int comparison = 0, assignment = 0;
+long long int comparison = 0, assignment = 0;
 
 //zwykły mergesort
 void merge(int*& tab, int*& help, int left, int middle, int right){

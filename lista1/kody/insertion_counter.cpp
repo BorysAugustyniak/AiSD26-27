@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int assignment = 0, comparison = 0;
+long long int assignment = 0, comparison = 0;
 
 //zwykły insertion sort
 void insertionsort(int*& tab, int size){

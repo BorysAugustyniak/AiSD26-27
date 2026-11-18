@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int comparison = 0, assignment = 0;
+long long int comparison = 0, assignment = 0;
 
 void bubblesort(int*& tab, int size){
     bool check = false;
