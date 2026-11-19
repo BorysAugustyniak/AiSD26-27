@@ -102,9 +102,10 @@ int main(){
 
         mergesort(tab, n);
 
-        for (int i = 0; i < n; ++i){
+        /*for (int i = 0; i < n; ++i){
             cout << tab[i] << " ";
-        }
+        }*/
+       
         comp += comparison;
         assi += assignment;
         comparison = 0;
